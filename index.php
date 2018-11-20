@@ -199,9 +199,91 @@ foreach ($incompletUsers as $index => $user) {
 
 var_dump($incompletUsers);
 
+/**
+ * Création d'une procédure sans paramètre
+ */
+function hello() {
+    var_dump("Hello");
+}
+
+hello();
+
+/**
+ * Création d'une procédure avec paramètre
+ */
+function helloName($name) {
+    var_dump("Hello $name");
+}
+
+helloName("Bibi");
+
+/**
+ * Création d'une procédure avec paramètre par défaut
+ */
+function helloNameJohnDoe($name = "John doe") {
+    var_dump("Hello $name");
+}
+
+helloNameJohnDoe();
+helloNameJohnDoe("Bob");
+
+/**
+ * Création d'une procédure avec paramètre null
+ */
+function helloNameNull($name = null) {
+    var_dump("Hello $name");
+}
+
+helloNameNull();
+
+$person = array(
+    "firstname" => "john",
+    "lastname" => "doe"
+);
+
+function helloArray($user) {
+    var_dump("Hello " . $user["firstname"] . " "  . $user["lastname"]);
+}
+
+helloArray($person);
 
 
+/**
+ * Reprendre la fonction helloArray :
+ * - Contrôler que le firtname et lastname sont bien remplis
+ * - Afficher le message "Des champs sont obligatoires (...)"
+ * - Afficher les firstname et lastname avec la première lettre
+ * en majuscule et le reste en minuscule
+ *
+ * firstname => john
+ * firstname => dOE
+ *
+ * => Hello John Doe
+ */
 
+//// Déclaration d'un tableau (liste de personnes)
+//$persons = array();
+//
+//// Déclaration d'un tableau associatif pour une personne
+//$personJohn = array(
+//    "username" => "john",
+//    "email" => "john@domain.tld"
+//);
+//
+//// Ajout d'une personne dans mon premier tableau (la liste)
+//$persons[] = $personJohn;
+//
+//var_dump("=================== persons ====================");
+//var_dump($persons);
+//
+//$personJane = array(
+//    "username" => "jane",
+//    "email" => "jane@domain.tld"
+//);
+//
+//$persons[] = $personJane;
+//
+//var_dump($persons);
 
 
 
