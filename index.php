@@ -193,6 +193,12 @@ $incompletUsers = array(
 //    )
 //);
 
+foreach ($incompletUsers as $index => $user) {
+    $incompletUsers[$index]["lastname"] = $lastnames[$index];
+}
+
+var_dump($incompletUsers);
+
 
 
 
