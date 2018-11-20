@@ -271,7 +271,7 @@ function helloUser($user) {
         return;
     }
 
-    var_dump("Hello " . $user["firstname"] . " "  . $user["lastname"]);
+    var_dump("Hello " . ucfirst($user["firstname"]) . " "  . ucfirst($user["lastname"]));
 }
 
 helloUser(array(
