@@ -247,7 +247,6 @@ function helloArray($user) {
 
 helloArray($person);
 
-
 /**
  * Reprendre la fonction helloArray :
  * - Contrôler que le firtname et lastname sont bien remplis
@@ -260,6 +259,32 @@ helloArray($person);
  *
  * => Hello John Doe
  */
+function helloUser($user) {
+//    if(empty($user["fisrtname"]) == false) {
+    if(empty($user["firstname"])) {
+        var_dump("Des champs sont obligatoires (fisrtname)");
+        return;
+    }
+
+    if(empty($user["lastname"])) {
+        var_dump("Des champs sont obligatoires (lastname)");
+        return;
+    }
+
+    var_dump("Hello " . $user["firstname"] . " "  . $user["lastname"]);
+}
+
+helloUser(array(
+    "firstname" => "john",
+    "lastname" => "doe"
+));
+
+//$toto = array(
+//    "fisrtname" => "john"
+//);
+
+//var_dump(empty($toto["lastname"]));
+
 
 //// Déclaration d'un tableau (liste de personnes)
 //$persons = array();
