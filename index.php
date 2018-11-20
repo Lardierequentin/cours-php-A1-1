@@ -278,38 +278,3 @@ helloUser(array(
     "firstname" => "john",
     "lastname" => "dOE"
 ));
-
-//$toto = array(
-//    "fisrtname" => "john"
-//);
-
-//var_dump(empty($toto["lastname"]));
-
-
-//// Déclaration d'un tableau (liste de personnes)
-//$persons = array();
-//
-//// Déclaration d'un tableau associatif pour une personne
-//$personJohn = array(
-//    "username" => "john",
-//    "email" => "john@domain.tld"
-//);
-//
-//// Ajout d'une personne dans mon premier tableau (la liste)
-//$persons[] = $personJohn;
-//
-//var_dump("=================== persons ====================");
-//var_dump($persons);
-//
-//$personJane = array(
-//    "username" => "jane",
-//    "email" => "jane@domain.tld"
-//);
-//
-//$persons[] = $personJane;
-//
-//var_dump($persons);
-
-
-
-
