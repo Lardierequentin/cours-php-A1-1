@@ -271,12 +271,12 @@ function helloUser($user) {
         return;
     }
 
-    var_dump("Hello " . ucfirst($user["firstname"]) . " "  . ucfirst($user["lastname"]));
+    var_dump("Hello " . ucfirst(strtolower($user["firstname"])) . " "  . ucfirst(strtolower($user["lastname"])));
 }
 
 helloUser(array(
     "firstname" => "john",
-    "lastname" => "doe"
+    "lastname" => "dOE"
 ));
 
 //$toto = array(
