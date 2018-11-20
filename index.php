@@ -92,30 +92,106 @@ for($i = 0; $i < 4; $i++) {
     var_dump("t[$i] => " . $t[$i]);
 }
 
+// Une variante de la boulce for
+foreach ($t as $key => $value) {
+    // "0 => 1"
+    var_dump("$key => $value");
+}
+
 /**
  * Compter le nombre de valeurs de ce tableau.
  * Puis l'afficher dans votre terminal.
  */
 $list = array(100, 200, 300, 4452, 5345, 643);
 
+$count = 0;
 
+// Permet de compter le nombre d'éléments dans un tableau
+for($i = 0; $i < 6; $i++) {
+    $count++;
+}
 
+var_dump($count);
 
+// Fonction qui donne le nombre d'entrées du tableau
+var_dump(count($list));
 
+// C'est tableau associatif
+$user = array(
+    "firstname" => "Bob",
+    "lastname" => "Dit l'âne",
+    "age" => 30,
+    "key" => "valeur"
+);
 
+// foreach($user as "firstname" => "Bob")
+foreach ($user as $key => $value) {
+//    var_dump($user[$key]);
+    var_dump("$key => $value");
+}
 
+$users = array(
+    array(
+        "firstname" => "bob",
+        "email" => "bob@domain.tld"
+    ),
+    array(
+        "firstname" => "john",
+        "email" => "john@domain.tld"
+    )
+);
 
+var_dump($users);
 
+$jane = array(
+    "firstname" => "jane",
+    "email" => "jane@domain.tld"
+);
 
+//array_push($users, $jane);
+$users[] = $jane;
 
+var_dump($users);
 
+/**
+ * L'objectif est de compléter le tableau $incompletUsers (ajouter les lastnames)
+ * avec le tableau $lastnames
+ *
+ */
+$lastnames = array("Dit l'âne", "doe", "die");
 
+$incompletUsers = array(
+    array(
+        "firstname" => "bob",
+        "email" => "bob@domain.tld"
+    ),
+    array(
+        "firstname" => "john",
+        "email" => "john@domain.tld"
+    ),
+    array(
+        "firstname" => "jane",
+        "email" => "jane@domain.tld"
+    )
+);
 
-
-
-
-
-
+//$incompletUsers = array(
+//    array(
+//        "firstname" => "bob",
+//        "lastname" => "Dit l'âne",
+//        "email" => "bob@domain.tld"
+//    ),
+//    array(
+//        "firstname" => "john",
+//        "lastname" => "doe",
+//        "email" => "john@domain.tld"
+//    ),
+//    array(
+//        "firstname" => "jane",
+//        "lastname" => "die",
+//        "email" => "jane@domain.tld"
+//    )
+//);
 
 
 
