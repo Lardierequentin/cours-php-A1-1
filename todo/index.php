@@ -58,14 +58,14 @@ if(isset($_GET["delete"])) {
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($tasks as $task): ?>
+    <?php foreach ($tasks as $index => $task): ?>
         <tr>
             <!-- Ceci est presque comme une condition. C'est un ternaire -->
             <td><?php echo $task["status"] ? "+" : "-" ?></td>
             <td><?php echo $task["task"] ?></td>
             <td><a href="#">check</a></td>
             <td><a href="#">modifier</a></td>
-            <td><a href="?????????">supprimer</a></td>
+            <td><a href="?delete=<?php echo $index ?>">supprimer</a></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
