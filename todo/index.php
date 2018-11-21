@@ -26,6 +26,11 @@ $tasks[] = array(
     "task" => "Task 3"
 );
 
+if(isset($_GET["delete"])) {
+    $index = $_GET["delete"];
+    unset($tasks[$index]);
+}
+
 ?><!doctype html>
 <html lang="en">
 <body>
@@ -35,6 +40,9 @@ $tasks[] = array(
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+<!--<pre>-->
+<!--    --><?php //var_dump($tasks) ?>
+<!--</pre>-->
 <form action="" method="post">
     <input type="text" name="task" placeholder="Saisir une tâche...">
     <button type="submit">OK</button>
@@ -57,7 +65,7 @@ $tasks[] = array(
             <td><?php echo $task["task"] ?></td>
             <td><a href="#">check</a></td>
             <td><a href="#">modifier</a></td>
-            <td><a href="#">supprimer</a></td>
+            <td><a href="?????????">supprimer</a></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
