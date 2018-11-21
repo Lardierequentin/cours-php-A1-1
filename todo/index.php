@@ -7,12 +7,12 @@ $tasks[] = array(
 );
 
 $tasks[] = array(
-    "status" => false,
+    "status" => true,
     "task" => "Task 2"
 );
 
 $tasks[] = array(
-    "status" => false,
+    "status" => true,
     "task" => "Task 3"
 );
 
@@ -40,20 +40,16 @@ $tasks[] = array(
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>--</td>
-        <td>Task 1</td>
-        <td><a href="#">check</a></td>
-        <td><a href="#">modifier</a></td>
-        <td><a href="#">supprimer</a></td>
-    </tr>
-    <tr>
-        <td>OK</td>
-        <td>Task ...</td>
-        <td><a href="#">check</a></td>
-        <td><a href="#">modifier</a></td>
-        <td><a href="#">supprimer</a></td>
-    </tr>
+    <?php foreach ($tasks as $task): ?>
+        <tr>
+            <!-- Ceci est presque comme une condition. C'est un ternaire -->
+            <td><?php echo $task["status"] ? "+" : "-" ?></td>
+            <td><?php echo $task["task"] ?></td>
+            <td><a href="#">check</a></td>
+            <td><a href="#">modifier</a></td>
+            <td><a href="#">supprimer</a></td>
+        </tr>
+    <?php endforeach; ?>
     </tbody>
 </table>
 </html>
