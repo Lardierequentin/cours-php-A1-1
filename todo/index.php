@@ -1,42 +1,59 @@
 <?php
-//    var_dump($_GET);
+$tasks = array();
 
-$errors = array();
+$tasks[] = array(
+    "status" => false,
+    "task" => "Task 1"
+);
 
-if (empty($_GET["lastname"])) {
-    $errors[] = "Saisir un lastname";
-}
+$tasks[] = array(
+    "status" => false,
+    "task" => "Task 2"
+);
 
-if (empty($_GET["firstname"])) {
-    $errors[] = "Saisir un firstname";
-}
+$tasks[] = array(
+    "status" => false,
+    "task" => "Task 3"
+);
 
-// URL/?firstname=john&lastname=doe
-$firstname = ucfirst(strtolower($_GET["firstname"]));
-$lastname = ucfirst(strtolower($_GET["lastname"]));
 ?><!doctype html>
 <html lang="en">
 <body>
-<?php
-//    if(!empty($errors)) {
-//        foreach ($errors as $msg) {
-//            echo "<p>$msg</p>";
-//        }
-//    }
-?>
 
-<?php if (!empty($errors)): ?>
-    <?php foreach ($errors as $msg): ?>
-        <p><?php echo $msg; ?></p>
-    <?php endforeach; ?>
-<?php endif; ?>
-
-<?php if (count($errors) < 2): ?>
-    <h1>Coucou <?php echo $firstname . " " . $lastname; ?></h1>
-<?php endif; ?>
 </body>
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+<form action="">
+    <input type="text" name="task" placeholder="Saisir une tâche...">
+    <button type="submit">OK</button>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Nom de la tâche</th>
+        <th>Checker</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>--</td>
+        <td>Task 1</td>
+        <td><a href="#">check</a></td>
+        <td><a href="#">modifier</a></td>
+        <td><a href="#">supprimer</a></td>
+    </tr>
+    <tr>
+        <td>OK</td>
+        <td>Task ...</td>
+        <td><a href="#">check</a></td>
+        <td><a href="#">modifier</a></td>
+        <td><a href="#">supprimer</a></td>
+    </tr>
+    </tbody>
+</table>
 </html>
