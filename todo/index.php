@@ -1,5 +1,15 @@
 <?php
+// Création d'un tableau
 $tasks = array();
+
+// Vérification que l'on reçoit une tâche à partir de la clé task du formulaire
+if(!empty($_POST["task"])) {
+    // Ajout d'un nouveau tableau dans notre tableau de tâches ($tasks)
+    $tasks[] = array(
+        "status" => false,
+        "task" => $_POST["task"]
+    );
+}
 
 $tasks[] = array(
     "status" => false,
@@ -25,7 +35,7 @@ $tasks[] = array(
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
-<form action="">
+<form action="" method="post">
     <input type="text" name="task" placeholder="Saisir une tâche...">
     <button type="submit">OK</button>
 </form>
