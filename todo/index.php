@@ -11,28 +11,10 @@ if(!empty($_POST["task"])) {
     );
 }
 
-$tasks[] = array(
-    "status" => false,
-    "task" => "Task 1"
-);
-
-$tasks[] = array(
-    "status" => true,
-    "task" => "Task 2"
-);
-
-$tasks[] = array(
-    "status" => true,
-    "task" => "Task 3"
-);
-
-//$tasks[1]["status"] = false;
-//
-//echo "<pre>";
-//var_dump($tasks);
-//echo "<pre>";
-//
-//die;
+if(isset($_GET["update"])) {
+    $index = $_GET["update"];
+    $tasks[$index]["status"] = false;
+}
 
 if(isset($_GET["delete"])) {
     $index = $_GET["delete"];
@@ -66,6 +48,7 @@ if(isset($_GET["delete"])) {
     </tr>
     </thead>
     <tbody>
+    <?php if(count($tasks)): ?>
     <?php foreach ($tasks as $index => $task): ?>
         <tr>
             <!-- Ceci est presque comme une condition. C'est un ternaire -->
@@ -76,6 +59,11 @@ if(isset($_GET["delete"])) {
             <td><a href="?delete=<?php echo $index ?>">supprimer</a></td>
         </tr>
     <?php endforeach; ?>
+    <?php else: ?>
+        <tr>
+            <td colspan="5">Aucune tâche, veuillez en saisir une...</td>
+        </tr>
+    <?php endif ?>
     </tbody>
 </table>
 </html>

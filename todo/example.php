@@ -1,4 +1,17 @@
-<!doctype html>
+<?php
+session_start();
+
+// $_SESSION["name"] = "john";
+// $_SESSION["tasks"][] = array(
+//         "status" => true,
+//         "task" => "Tâche 1"
+// );
+//session_destroy();
+//$_SESSION["tasks"][0]["status"] = false;
+
+//        unset($_SESSION["tasks"][0]);
+
+?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,11 +22,7 @@
 </head>
 <body>
 <pre>
-    <?php var_dump($_POST) ?>
+    <?php var_dump($_SESSION) ?>
 </pre>
-<form action="" method="post">
-    <input type="text" name="key">
-    <button type="submit">OK</button>
-</form>
 </body>
 </html>
