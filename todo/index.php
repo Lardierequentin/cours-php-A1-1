@@ -26,6 +26,14 @@ $tasks[] = array(
     "task" => "Task 3"
 );
 
+//$tasks[1]["status"] = false;
+//
+//echo "<pre>";
+//var_dump($tasks);
+//echo "<pre>";
+//
+//die;
+
 if(isset($_GET["delete"])) {
     $index = $_GET["delete"];
     unset($tasks[$index]);
@@ -63,7 +71,7 @@ if(isset($_GET["delete"])) {
             <!-- Ceci est presque comme une condition. C'est un ternaire -->
             <td><?php echo $task["status"] ? "+" : "-" ?></td>
             <td><?php echo $task["task"] ?></td>
-            <td><a href="#">check</a></td>
+            <td><a href="?update=<?php echo $index ?>">check</a></td>
             <td><a href="#">modifier</a></td>
             <td><a href="?delete=<?php echo $index ?>">supprimer</a></td>
         </tr>
