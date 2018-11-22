@@ -3,10 +3,9 @@ require_once 'libs/functions.php';
 
 session_start();
 
-var_dump($_SESSION);
-
-var_dump($_POST);
-die;
+if(!empty($_POST['task-modified']) && isset($_POST['task-index'])) {
+    $_SESSION['tasks'][$_POST['task-index']]['task'] = $_POST['task-modified'];
+}
 
 // Création d'un tableau dans la session avec la clé "tasks"
 if(!isset($_SESSION['tasks'])) {
@@ -55,6 +54,7 @@ if(isset($_GET["delete"])) {
 <form action="" method="post">
     <input type="text" name="task" placeholder="Saisir une tâche...">
     <button type="submit">OK</button>
+    <a href="">Clean</a>
 </form>
 <table>
     <thead>
