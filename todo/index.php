@@ -27,11 +27,22 @@ if(!empty($_POST["task"])) {
 //        "status" => false,
 //        "task" => $_POST["task"]
 //    );
-     $_SESSION["tasks"][] = array(
-             "status" => true,
-             "task" => $_POST["task"]
-     );
 
+    $found = false;
+
+    foreach ($_SESSION['tasks'] as $task) {
+        if($task['task'] == $_POST["task"]) {
+            $found = true;
+        }
+    }
+
+    if($found === false) {
+        $_SESSION["tasks"][] = array(
+            "status" => true,
+            "task" => $_POST["task"]
+        );
+    }
+    
     redirection();
 }
 
