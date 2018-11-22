@@ -1,5 +1,5 @@
 <?php
-require_once('libs/functions.php');
+require_once 'libs/functions.php';
 
 session_start();
 
@@ -42,10 +42,7 @@ if(isset($_GET["delete"])) {
     <title>Document</title>
 </head>
 
-<header>
-    <h1>Ma super TODO liste</h1>
-</header>
-
+<?php include 'layout/header.php'?>
 
 <form action="" method="post">
     <input type="text" name="task" placeholder="Saisir une tâche...">
@@ -69,7 +66,7 @@ if(isset($_GET["delete"])) {
             <td><?php echo $task["status"] ? "+" : "-" ?></td>
             <td><?php echo $task["task"] ?></td>
             <td><a href="?update=<?php echo $index ?>">check</a></td>
-            <td><a href="#">modifier</a></td>
+            <td><a href="update.php?index=<?php echo $index ?>">modifier</a></td>
             <td><a href="?delete=<?php echo $index ?>">supprimer</a></td>
         </tr>
     <?php endforeach; ?>
@@ -81,6 +78,6 @@ if(isset($_GET["delete"])) {
     </tbody>
 </table>
 
-<?php include ('layout/footer.php'); ?>
+<?php include 'layout/footer.php'; ?>
 
 </html>
