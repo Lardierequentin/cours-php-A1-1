@@ -1,4 +1,6 @@
 <?php
+require_once('libs/functions.php');
+
 session_start();
 
 // Création d'un tableau
@@ -16,24 +18,21 @@ if(!empty($_POST["task"])) {
              "task" => $_POST["task"]
      );
 
-     header("Location: /todo");
-     die;
+    redirection();
 }
 
 if(isset($_GET["update"])) {
     $index = $_GET["update"];
     $_SESSION["tasks"][$index]["status"] = false;
 
-    header("Location: /todo");
-    die;
+    redirection();
 }
 
 if(isset($_GET["delete"])) {
     $index = $_GET["delete"];
     unset($_SESSION["tasks"][$index]);
 
-    header("Location: /todo");
-    die;
+    redirection();
 }
 
 ?><!doctype html>
@@ -78,4 +77,7 @@ if(isset($_GET["delete"])) {
     <?php endif ?>
     </tbody>
 </table>
+
+<?php include ('layout/footer.php'); ?>
+
 </html>
