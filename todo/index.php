@@ -41,6 +41,12 @@ if(isset($_GET["delete"])) {
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+
+<header>
+    <h1>Ma super TODO liste</h1>
+</header>
+
+
 <form action="" method="post">
     <input type="text" name="task" placeholder="Saisir une tâche...">
     <button type="submit">OK</button>
