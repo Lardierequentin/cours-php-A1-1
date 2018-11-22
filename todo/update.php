@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-var_dump($_GET);
-var_dump($_SESSION);
+$index = $_GET['index'];
+
+$taskName = $_SESSION['tasks'][$index]['task'];
 
 ?><!doctype html>
 <html lang="en">
@@ -13,8 +14,9 @@ var_dump($_SESSION);
 <body>
 <?php include 'layout/header.php'  ?>
 
-<form action="" method="post">
-    <input type="text" name="task" value="<?php echo "..." ?>">
+<form action="index.php" method="post">
+    <input type="text" name="task-modified" value="<?php echo $taskName ?>">
+    <input type="hidden" name="task-index" value="<?php echo $index ?>">
     <button type="submit">OK</button>
 </form>
 

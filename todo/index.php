@@ -3,10 +3,18 @@ require_once 'libs/functions.php';
 
 session_start();
 
-// Création d'un tableau
-$tasks = array();
+var_dump($_SESSION);
+
+var_dump($_POST);
+die;
+
+// Création d'un tableau dans la session avec la clé "tasks"
+if(!isset($_SESSION['tasks'])) {
+    $_SESSION['tasks'] = array();
+}
 
 // Vérification que l'on reçoit une tâche à partir de la clé task du formulaire
+// On créer la tâche dans le tableau
 if(!empty($_POST["task"])) {
     // Ajout d'un nouveau tableau dans notre tableau de tâches ($tasks)
 //    $tasks[] = array(
