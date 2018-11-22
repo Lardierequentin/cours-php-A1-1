@@ -3,6 +3,13 @@ require_once 'libs/functions.php';
 
 session_start();
 
+// Permet de supprimer toutes les entrée de la session.
+if(isset($_GET['clean']) && $_GET['clean'] == '1') {
+    session_destroy();
+
+    redirection();
+}
+
 if(!empty($_POST['task-modified']) && isset($_POST['task-index'])) {
     $_SESSION['tasks'][$_POST['task-index']]['task'] = $_POST['task-modified'];
 }
@@ -54,7 +61,7 @@ if(isset($_GET["delete"])) {
 <form action="" method="post">
     <input type="text" name="task" placeholder="Saisir une tâche...">
     <button type="submit">OK</button>
-    <a href="">Clean</a>
+    <a href="?clean=1">Clean</a>
 </form>
 <table>
     <thead>
