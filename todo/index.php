@@ -12,19 +12,28 @@ if(!empty($_POST["task"])) {
 //        "task" => $_POST["task"]
 //    );
      $_SESSION["tasks"][] = array(
-             "status" => false,
+             "status" => true,
              "task" => $_POST["task"]
      );
+
+     header("Location: /todo");
+     die;
 }
 
 if(isset($_GET["update"])) {
     $index = $_GET["update"];
-    $tasks[$index]["status"] = false;
+    $_SESSION["tasks"][$index]["status"] = false;
+
+    header("Location: /todo");
+    die;
 }
 
 if(isset($_GET["delete"])) {
     $index = $_GET["delete"];
-    unset($tasks[$index]);
+    unset($_SESSION["tasks"][$index]);
+
+    header("Location: /todo");
+    die;
 }
 
 ?><!doctype html>
@@ -36,9 +45,6 @@ if(isset($_GET["delete"])) {
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
-<!--<pre>-->
-<!--    --><?php //var_dump($tasks) ?>
-<!--</pre>-->
 <form action="" method="post">
     <input type="text" name="task" placeholder="Saisir une tâche...">
     <button type="submit">OK</button>
