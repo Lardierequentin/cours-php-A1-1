@@ -41,8 +41,11 @@ if(!empty($_POST["task"])) {
             "status" => true,
             "task" => $_POST["task"]
         );
+    } else {
+        $taskName = $_POST["task"];
+        $_SESSION["error"] = "Vous avez déjà une tâche avec le nom : $taskName";
     }
-    
+
     redirection();
 }
 
