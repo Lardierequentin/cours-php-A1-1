@@ -1,14 +1,20 @@
 <?php
+session_start();
+
 // Création d'un tableau
 $tasks = array();
 
 // Vérification que l'on reçoit une tâche à partir de la clé task du formulaire
 if(!empty($_POST["task"])) {
     // Ajout d'un nouveau tableau dans notre tableau de tâches ($tasks)
-    $tasks[] = array(
-        "status" => false,
-        "task" => $_POST["task"]
-    );
+//    $tasks[] = array(
+//        "status" => false,
+//        "task" => $_POST["task"]
+//    );
+     $_SESSION["tasks"][] = array(
+             "status" => false,
+             "task" => $_POST["task"]
+     );
 }
 
 if(isset($_GET["update"])) {
@@ -48,8 +54,8 @@ if(isset($_GET["delete"])) {
     </tr>
     </thead>
     <tbody>
-    <?php if(count($tasks)): ?>
-    <?php foreach ($tasks as $index => $task): ?>
+    <?php if(count($_SESSION["tasks"])): ?>
+    <?php foreach ($_SESSION["tasks"] as $index => $task): ?>
         <tr>
             <!-- Ceci est presque comme une condition. C'est un ternaire -->
             <td><?php echo $task["status"] ? "+" : "-" ?></td>
