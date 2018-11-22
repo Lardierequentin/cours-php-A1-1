@@ -37,9 +37,6 @@ if(isset($_GET["delete"])) {
 
 ?><!doctype html>
 <html lang="en">
-<body>
-
-</body>
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
